@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
           textTheme:
               GoogleFonts.latoTextTheme().apply(bodyColor: Colors.white)),
-      home: Scaffold(
+      home: const Scaffold(
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.all(20),

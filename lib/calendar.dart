@@ -4,6 +4,8 @@ import 'package:scrollable_clean_calendar/scrollable_clean_calendar.dart';
 import 'package:scrollable_clean_calendar/utils/enums.dart';
 
 class Calendar extends StatefulWidget {
+  const Calendar({Key? key}) : super(key: key);
+
   @override
   State<Calendar> createState() => _CalendarState();
 }
@@ -25,9 +27,9 @@ class _CalendarState extends State<Calendar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
-        title: Text('Calendar View'),
+        title: const Text('Calendar View'),
       ),
       body: ScrollableCleanCalendar(
         dayBuilder: (context, day) => MaterialButton(

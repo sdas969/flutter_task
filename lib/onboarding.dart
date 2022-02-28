@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task/details.dart';
 import 'package:flutter_task/homeScreen.dart';
 import 'package:lottie/lottie.dart';
 
@@ -75,7 +74,7 @@ class _OnboardingSetupState extends State<OnboardingSetup> {
                               Expanded(
                                 flex: 1,
                                 child: Text(item.content,
-                                    style: TextStyle(fontSize: 16)),
+                                    style: const TextStyle(fontSize: 16)),
                               )
                             ],
                           )
@@ -91,7 +90,7 @@ class _OnboardingSetupState extends State<OnboardingSetup> {
                               Expanded(
                                   child: Text(
                                 item.content,
-                                style: TextStyle(fontSize: 20),
+                                style: const TextStyle(fontSize: 20),
                               ))
                             ],
                           ))
@@ -161,7 +160,7 @@ class _OnboardingSetupState extends State<OnboardingSetup> {
                 color: Colors.blue.shade900,
                 onPressed: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: ((context) => Home())));
+                      MaterialPageRoute(builder: ((context) => const Home())));
                 }))
       ],
     );

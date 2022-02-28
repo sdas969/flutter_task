@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 
 class Details extends StatelessWidget {
+  const Details({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff131b26),
+        backgroundColor: const Color(0xff131b26),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Flexible(
               flex: 3,
               child: Container(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(
+                    const SizedBox(
                       height: 35.0,
                     ),
                     Row(
                       children: <Widget>[
-                        Expanded(
+                        const Expanded(
                           child: Text(
                             "Learn 5 new words",
                             style: TextStyle(
@@ -32,7 +34,7 @@ class Details extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(5.0),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
@@ -49,7 +51,7 @@ class Details extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15.0,
                     ),
                     Text(
@@ -59,17 +61,17 @@ class Details extends StatelessWidget {
                         fontSize: 21,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 11.0,
                     ),
-                    LinearProgressIndicator(
+                    const LinearProgressIndicator(
                       value: .71,
                       backgroundColor: Color(0xff1c232d),
                       valueColor: AlwaysStoppedAnimation(
                         Color(0xff701bff),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 35.0,
                     ),
                     Text(
@@ -79,12 +81,12 @@ class Details extends StatelessWidget {
                         fontSize: 21,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15.0,
                     ),
                     Row(
                       children: <Widget>[
-                        Expanded(
+                        const Expanded(
                           child: Text(
                             "75%",
                             style: TextStyle(
@@ -97,18 +99,18 @@ class Details extends StatelessWidget {
                         CircularProgressIndicator(
                           value: .73,
                           backgroundColor: Colors.grey[600],
-                          valueColor: AlwaysStoppedAnimation(
+                          valueColor: const AlwaysStoppedAnimation(
                             Color(0xff701bff),
                           ),
                         )
                       ],
                     ),
-                    SizedBox(height: 35),
+                    const SizedBox(height: 35),
                     Container(
                       color: Colors.grey[500],
                       height: 1.0,
                     ),
-                    SizedBox(height: 35),
+                    const SizedBox(height: 35),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: List.generate(
@@ -128,14 +130,14 @@ class Details extends StatelessWidget {
                                   fontSize: 17,
                                 ),
                               ),
-                              SizedBox(height: 9),
+                              const SizedBox(height: 9),
                               Text(
                                 f == 0
                                     ? "Every Day"
                                     : f == 1
                                         ? "8 Days"
                                         : "11 Days",
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 19,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -155,7 +157,7 @@ class Details extends StatelessWidget {
               child: Transform.rotate(
                 angle: 3.14,
                 child: CustomPaint(
-                  child: MyBezierCurve(),
+                  child: const MyBezierCurve(),
                   painter: CurvePath(),
                 ),
               ),
@@ -172,7 +174,7 @@ class CurvePath extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
 
-    paint.color = Color(0xff701dff);
+    paint.color = const Color(0xff701dff);
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 5;
 
@@ -201,12 +203,14 @@ class CurvePath extends CustomPainter {
 }
 
 class MyBezierCurve extends StatelessWidget {
+  const MyBezierCurve({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: ClippingClass(),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -224,7 +228,7 @@ class MyBezierCurve extends StatelessWidget {
 class ClippingClass extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    var path = new Path();
+    var path = Path();
     path.lineTo(0, size.height * 0.50);
     path.quadraticBezierTo(size.width * 0.10, size.height * 0.80,
         size.width * 0.15, size.height * 0.60);

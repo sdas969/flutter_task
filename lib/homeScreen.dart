@@ -69,13 +69,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: TabBar(
-          indicatorPadding: EdgeInsets.all(8),
-          padding: EdgeInsets.all(8),
+          indicatorPadding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           indicator: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: Colors.blue.shade700),
           controller: _tabController,
-          tabs: [
+          tabs: const [
             Tab(
               icon: Icon(Icons.home),
             ),
@@ -98,7 +98,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: ((context) => Calendar())));
+                                builder: ((context) => const Calendar())));
                       },
                       icon: const Icon(Icons.calendar_month)),
                   actions: [
@@ -110,13 +110,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   elevation: 10,
                   expandedHeight: 350,
                   flexibleSpace: FlexibleSpaceBar(
-                    stretchModes: [
+                    stretchModes: const [
                       StretchMode.blurBackground,
                       StretchMode.fadeTitle
                     ],
-                    titlePadding: EdgeInsets.all(2),
+                    titlePadding: const EdgeInsets.all(2),
                     centerTitle: true,
-                    title: Image(image: AssetImage('images/logo.png')),
+                    title: const Image(image: AssetImage('images/logo.png')),
                     background: Row(
                       children: [
                         Expanded(
@@ -125,7 +125,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
+                              const Text(
                                 'Hi, Smarajit',
                                 style: TextStyle(fontSize: 30),
                                 textAlign: TextAlign.center,
@@ -134,7 +134,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 countPending(habits) > 0
                                     ? 'You have ${countPending(habits)} pending habits for today'
                                     : 'You' 're done for today!!',
-                                style: TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 14),
                                 textAlign: TextAlign.center,
                               ),
                             ],
@@ -148,8 +148,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                     ),
                   ),
                   shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(
-                          bottom: const Radius.circular(20))),
+                      borderRadius:
+                          BorderRadius.vertical(bottom: Radius.circular(20))),
                 ),
                 SliverList(
                     delegate: SliverChildListDelegate([
@@ -274,18 +274,18 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   elevation: 10,
                   expandedHeight: 350,
                   flexibleSpace: FlexibleSpaceBar(
-                    stretchModes: [
+                    stretchModes: const [
                       StretchMode.blurBackground,
                       StretchMode.fadeTitle
                     ],
-                    titlePadding: EdgeInsets.all(2),
+                    titlePadding: const EdgeInsets.all(2),
                     centerTitle: true,
                     background:
                         Lottie.asset('lottie/gamification.json', repeat: false),
                   ),
                   shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(
-                          bottom: const Radius.circular(20))),
+                      borderRadius:
+                          BorderRadius.vertical(bottom: Radius.circular(20))),
                 ),
                 SliverList(
                     delegate: SliverChildListDelegate([
@@ -371,8 +371,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                             borderRadius:
                                                 BorderRadius.circular(11)),
                                         title: Text(game.text),
-                                        trailing:
-                                            Icon(Icons.keyboard_arrow_right)),
+                                        trailing: const Icon(
+                                            Icons.keyboard_arrow_right)),
                                   ))
                               .toList(),
                         )
